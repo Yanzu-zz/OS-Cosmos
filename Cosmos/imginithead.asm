@@ -1,3 +1,4 @@
+; GRUB 头的汇编部分
 ; 该文件主要工作是初始化 CPU 的寄存器，加载 GDT，切换到 CPU 的保护模式
 
 ; 首先是 GRUB1 和 GRUB2 需要的两个头结构
@@ -26,7 +27,7 @@ mbhdr:
   DD 0xE85250D6
   DD 0
   DD mhdrend - mbhdr
-  DD -(0xE85250D6 + 0 + （mhdrend - mbhdr)
+  DD -(0xE85250D6 + 0 + (mhdrend - mbhdr))
   DW 2, 0
   DD 24
   DD mbhdr

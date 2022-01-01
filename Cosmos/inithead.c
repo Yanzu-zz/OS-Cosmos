@@ -1,3 +1,5 @@
+// GRUB 头的 C 语言部分，用于放置二级引导器到指定内存中
+
 #define MDC_ENDGIC 0xaaffaaffaaffaaff
 #define MDC_RVGIC 0xffaaffaaffaaffaa
 #define REALDRV_PHYADR 0x1000
@@ -14,7 +16,7 @@ void inithead_entry()
   return;
 }
 
-// 写 initldrsve.bin 文件到特定的内存中
+// 把映像文件中的 initldrsve.bin 文件写入到特定的内存地址空间中
 void write_realintsvefile()
 {
   fhdsc_t *fhdscstart = find_file("initldrsve.bin");
